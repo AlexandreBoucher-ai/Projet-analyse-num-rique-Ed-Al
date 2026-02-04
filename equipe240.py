@@ -30,8 +30,8 @@ x = np.linalg.solve(M, a) # ok (vérifié avec réponse attendu)
 N = np.linalg.solve(M, M.T) # ok (M.T est un attribut (variable d'instance) des objet Numpy (la version transporté))
 #print(N)
 
-plt.matshow(N)
-plt.title('Figure 1')
+#plt.matshow(N)
+#plt.title('Figure 1')
 # plt.show()  pour la faire apparaitre et sauvegarder. À supprimer après avoir sauvegarder l'image ?
 
 # on défini la fonction
@@ -40,6 +40,16 @@ def func(x):
 
 # on défini x, et on l'appelle pour les ordonné du plot
 x = np.linspace(0, 1, 101)
-plt.plot(x, func(x))
-plt.title('Figure 2')
+#plt.plot(x, func(x))
+#plt.title('Figure 2')
 # plt.show() idem pour faire apparaître l'image
+
+
+
+# 2 c)
+# array de 20 colonne (0 à 19) en x et le array issu de la fonction défini pour les y
+plt.plot(np.arange(20), suiteSn(19))
+plt.title('Figure 3')
+plt.xlabel('n')
+plt.ylabel('Sn')
+#plt.show()
