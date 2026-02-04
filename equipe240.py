@@ -48,8 +48,35 @@ x = np.linspace(0, 1, 101)
 
 # 2 c)
 # array de 20 colonne (0 à 19) en x et le array issu de la fonction défini pour les y
-plt.plot(np.arange(20), suiteSn(19))
-plt.title('Figure 3')
-plt.xlabel('n')
-plt.ylabel('Sn')
+#plt.plot(np.arange(20), suiteSn(19))
+#plt.title('Figure 3')
+#plt.xlabel('n')
+#plt.ylabel('Sn')
 #plt.show()
+
+
+
+# 3 a)
+# 1. Calcul de D
+# innitialisation de D (avec D(0) où h = 10**-1)
+# D(x) est l'approximation de la dérivé de f(x)
+D = np.array((func(0 + 19**-1) - func(0))/ 10**-1)
+# on va de h = 10**-2 à 10**-12
+for i in range(2, 13):
+    D = np.append(D, (func(10**-i) - func(0)) / 10**-i)
+
+# 2. On crée un array de même nombre de colonne avec la valeur réel de Fprime, soit 2
+# (calculer à la calculatrice)
+Fp = np.full(12, 2)
+
+# 3. On crée un nouveau array qui est l'erreur comise pour chaque h
+# erreur comise = Fp - D en valeur absolue
+Err = Fp - D
+
+#4. on crée un array pour h
+h = np.array(10**-1)
+for i in range(2, 13):
+    h = np.append(10**-i)
+
+#5. On crée le plot de l'erreur en fonction de h
+plt
