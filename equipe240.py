@@ -60,7 +60,7 @@ x = np.linspace(0, 1, 101)
 # 1. Calcul de D
 # innitialisation de D (avec D(0) où h = 10**-1)
 # D(x) est l'approximation de la dérivé de f(x)
-D = np.array((func(0 + 19**-1) - func(0))/ 10**-1)
+D = np.array([(func(0 + 10**-1) - func(0))/ 10**-1])
 # on va de h = 10**-2 à 10**-12
 for i in range(2, 13):
     D = np.append(D, (func(10**-i) - func(0)) / 10**-i)
@@ -71,12 +71,16 @@ Fp = np.full(12, 2)
 
 # 3. On crée un nouveau array qui est l'erreur comise pour chaque h
 # erreur comise = Fp - D en valeur absolue
-Err = Fp - D
+Err = np.abs(Fp - D)
 
 #4. on crée un array pour h
-h = np.array(10**-1)
+h = np.array([10**-1])
 for i in range(2, 13):
-    h = np.append(10**-i)
+    h = np.append(h, 10**-i)
 
 #5. On crée le plot de l'erreur en fonction de h
-plt
+plt.loglog(h, Err)
+plt.title("Figure 4: L'erreur sur la dérivé en fonction de h")
+plt.xlabel('h')
+plt.ylabel('Erreur')
+plt.show()
