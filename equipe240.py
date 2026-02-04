@@ -6,38 +6,32 @@ from suiteSn import suiteSn
 
 # 1.2 Exercices:
 a = np.full((6, 1), 1) # ok
-print(a)
-
+#print(a)
 b = np.arange(1, 7) # ok
-print(b)
-
+#print(b)
 c = a.reshape(6) # ok
-print(c)
-
+#print(c)
 d = c * 240 # ok
-print(d)
-
+#print(d)
 I = np.identity(6) # ok
-print(I)
-
+#print(I)
 J = np.full((6, 6), 1) # ok
-print(J)
-
+#print(J)
 K = np.diag(b) # ok
-print(K)
-
+#print(K)
 L = I * 55 - J + 2*(a*c) # ok (vérifié à quoi est supposé ressembler la matrice)
-print(L)
-
+#print(L)
 M = K ; M[:, 0] = a.reshape((6,)) # ok
-print(M)
-
+#print(M)
 dd = np.linalg.det(M) # ok
-print(dd)
-
+#print(dd)
 x = np.linalg.solve(M, a) # ok (vérifié avec réponse attendu)
-print(x)
-
+#print(x)
 N = np.linalg.solve(M, M.T) # ok (M.T est un attribut (variable d'instance) des objet Numpy (la version transporté))
-print(N)
+#print(N)
 
+plt.matshow(N)
+plt.title('matrice N')
+plt.show() # pour la faire apparaitre et sauvegarder (déjà fait). À supprimer ?
+
+def 
