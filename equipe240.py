@@ -31,7 +31,15 @@ N = np.linalg.solve(M, M.T) # ok (M.T est un attribut (variable d'instance) des 
 #print(N)
 
 plt.matshow(N)
-plt.title('matrice N')
-plt.show() # pour la faire apparaitre et sauvegarder (déjà fait). À supprimer ?
+plt.title('Figure 1')
+#plt.show()  pour la faire apparaitre et sauvegarder. À supprimer après avoir sauvegarder l'image ?
 
-def 
+# on défini la fonction
+def func(x):
+    return -(x**2 / 2) + np.exp(x) + np.sin(x)
+
+# on défini x, et on l'appelle pour les ordonné du plot
+x = np.linspace(0, 1, 101)
+plt.plot(x, func(x))
+plt.title('Figure 2')
+plt.show() #idem pour faire apparaître l'image
