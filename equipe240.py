@@ -84,3 +84,5 @@ plt.title("Figure 4: L'erreur sur la dérivé en fonction de h")
 plt.xlabel('h')
 plt.ylabel('Erreur')
 plt.show()
+
+penis
