@@ -85,4 +85,4 @@ plt.xlabel('h')
 plt.ylabel('Erreur')
 plt.show()
 
-penis
+
