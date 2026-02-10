@@ -9,4 +9,3 @@ def suiteSn(n):
     for i in range(1, n+1):
         S = np.append(S, np.exp(1) - i * S[-1])
     return S
-# vérifier si résultat est bon
